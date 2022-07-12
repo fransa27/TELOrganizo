@@ -6,7 +6,7 @@ import {
     Text, TouchableOpacity, StyleSheet
  } from 'react-native';
 import FormularioTarea from './formularioTarea';
-class Tarea extends React.Component {
+class CrearTarea extends React.Component {
     state = {
         modal: false
     };
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Tarea;
+export default CrearTarea;

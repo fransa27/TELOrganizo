@@ -17,13 +17,16 @@ import {
   Text,
   View
 } from 'react-native';
-import Tarea from './src/components/tareas';
-
+import CrearTarea from './src/components/CrearTareas';
+import TareasEquipo from './src/components/tareasEquipo';
+import TareasPersonales from './src/components/tareasPersonales';
 const App= () => {
 
   return (
     <SafeAreaView >
-      <Tarea></Tarea>
+      <TareasPersonales />
+      <TareasEquipo />
+      <CrearTarea />
     </SafeAreaView>
   );
 };
