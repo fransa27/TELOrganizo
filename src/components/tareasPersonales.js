@@ -4,7 +4,8 @@ import CheckBox  from '@react-native-community/checkbox';
 const TareasPersonales= () => {
     const [isSelect, setSelect] = useState(false);
     return(
-        <View /* style={styles.container} */>
+        <View style={styles.container}>
+            <Text style={styles.title}>Tareas asignada</Text>
             <View style={styles.checkboxContainer}>
                 <CheckBox 
                     disabled={false}
@@ -22,9 +23,9 @@ const TareasPersonales= () => {
 const styles = StyleSheet.create({ 
     container:{
         backgroundColor: '#F5CBA7',
-        flex: 1,
+        /* flex: 1,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center", */
     },
     checkboxContainer: {
         flexDirection: "row",
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
     },
     checkbox: {
         alignSelf: "center",
+    },
+    title:{
+        fontSize: 20,
+        fontWeight: "bold"
     }
 })
 

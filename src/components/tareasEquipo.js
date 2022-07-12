@@ -5,6 +5,7 @@ class TareasEquipo extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <Text style={styles.title}>Tareas equipo</Text>
                 <Text>Tareas grupo </Text>
             </View>
         )
@@ -15,6 +16,10 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor: '#E8DAEF',
         
+    },
+    title:{
+        fontSize: 20,
+        fontWeight: "bold"
     }
 })
 
