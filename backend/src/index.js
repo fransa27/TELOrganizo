@@ -1,8 +1,8 @@
 const express=require('express');
 const morgan =require('morgan');
 //import taskRoutes from './routes/tareas.routes'
-const taskRoutes = require('./routes/tareas.routes');
-const usuariosRoutes = require('./routes/usuarios.routes');
+const taskRoutes = require('../src/routes/tareas.routes');
+const usuariosRoutes = require('../src/routes/usuarios.routes');
 const app = express();
 const cors=require('cors')
 

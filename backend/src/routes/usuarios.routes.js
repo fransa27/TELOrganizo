@@ -10,7 +10,7 @@ const {
     updateUser
     
     
-} = require('../controllers/usuarios.controllers')
+} = require('../controllers/usuarios.controllers') //../controllers/usuarios.controllers'
 
 rou2.get('/usuarios', getAllUsers)
 rou2.get('/usuarios/:id', getUser)

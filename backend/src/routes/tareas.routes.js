@@ -9,7 +9,7 @@ const {
     createTask, 
     deleteTask, 
     updateTask
-} = require('../controllers/tareas.controllers')
+} = require('../controllers/tareas.controllers')    //controllers/tareas.controllers'
 
 rou.get('/tareas', getAllTasks)
 rou.get('/tareas/:id', getTask)
