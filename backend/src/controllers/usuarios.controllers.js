@@ -11,6 +11,21 @@ const getAllUsers = async (req,res)=>{
 
 }
 
+const getAllUsersFamily = async (req,res)=>{
+    
+    try {
+        const {id}=req.params
+        const result = await pool.query('SELECT * FROM usuario WHERE id_familia =$1',[id])
+        if (result.rows.length === 0)
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        
+        return res.json(result.rows[0])
+    } catch (error) {
+        console.log(error.message)
+    }
+    
+}
+
 const getUser = async (req,res)=>{
     
     try {
@@ -67,4 +82,4 @@ const updateUser= async (req,res)=>{
         console.log(error.message)
     }
 }
-module.exports={getAllUsers, getUser,createUser,deleteUser,updateUser}
+module.exports={getAllUsersFamily,getAllUsers, getUser,createUser,deleteUser,updateUser,getAllUsersFamily}

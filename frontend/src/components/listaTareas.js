@@ -4,7 +4,7 @@ import React from 'react'
 const ListaTareas = ({tasks}) => {
   return (
     <FlatList
-        data_2={tasks}
+        data={tasks}
         renderItem={({item})=>{
             return <Text>{item.nombre_tarea}</Text>
         }}
