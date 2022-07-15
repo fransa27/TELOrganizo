@@ -1,15 +1,15 @@
 import { View, Text, FlatList } from 'react-native'
 import React from 'react'
 
-const listaTareas = () => {
+const ListaTareas = ({tasks}) => {
   return (
-    <FlatList>
-        data_2={tareas}
+    <FlatList
+        data_2={tasks}
         renderItem={({item})=>{
             return <Text>{item.nombre_tarea}</Text>
         }}
-    </FlatList>
+    />
   )
 }
 
-export default listaTareas
+export default ListaTareas
