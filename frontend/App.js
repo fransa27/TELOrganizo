@@ -18,8 +18,9 @@ import {
   View
 } from 'react-native';
 import CrearTarea from './src/components/CrearTareas';
-import TareasEquipo from './src/components/tareasEquipo';
+import TareasEquipo from './src/components/Team/tareasEquipo';
 import TareasPersonales from './src/components/tareasPersonales';
+import Team from './src/components/Team/team';
 const App= () => {
 
   return (
@@ -27,6 +28,7 @@ const App= () => {
       <TareasPersonales />
       <TareasEquipo />
       <CrearTarea />
+      <Team />
     </SafeAreaView>
   );
 };
