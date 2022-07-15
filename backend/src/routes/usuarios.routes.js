@@ -15,6 +15,7 @@ const {
 
 rou2.get('/usuarios', getAllUsers)
 rou2.get('/usuarios/:id', getUser)
+rou2.get('/usuarios/familia/:id', getAllUsersFamily)
 rou2.post('/usuarios',createUser)
 rou2.delete('/usuarios/:id',deleteUser)
 rou2.put('/usuarios/:id',updateUser)
