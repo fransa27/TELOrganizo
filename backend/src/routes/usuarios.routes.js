@@ -7,7 +7,8 @@ const {
     getUser,
     createUser,
     deleteUser,
-    updateUser
+    updateUser,
+    getAllUsersFamily
     
     
 } = require('../controllers/usuarios.controllers') //../controllers/usuarios.controllers'

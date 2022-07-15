@@ -67,4 +67,4 @@ const updateUser= async (req,res)=>{
         console.log(error.message)
     }
 }
-module.exports={getAllUsers, getUser,createUser,deleteUser,updateUser}
+module.exports={getAllUsersFamily,getAllUsers, getUser,createUser,deleteUser,updateUser}
