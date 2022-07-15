@@ -12,8 +12,9 @@ const TareasPersonales= () => {
                     value={isSelect}
                     onValueChange={(newValue) => setSelect(newValue)}
                     style={styles.checkbox}
+                    
                 />
-                <Text>Tareas personales en checkbox</Text>
+                <Text style={styles.texto}>Tareas personales en checkbox</Text>
             </View>
             
         </View>
@@ -36,8 +37,11 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     title:{
-        fontSize: 20,
+        fontSize: 35,
         fontWeight: "bold"
+    },
+    texto:{
+        fontSize: 20,
     }
 })
 
