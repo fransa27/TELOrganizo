@@ -9,7 +9,13 @@ import { StyleSheet,
 import React, {Component} from 'react';
 import RegisterForm from './registerForm';
 class Login extends Component{
-
+    constructor(){
+        super()
+        this.data={
+            nombre: '',
+            psw: ''  
+        }
+    }
     /* data = {
         usuario: '',
         psw:''
@@ -24,10 +30,10 @@ class Login extends Component{
     render(){
         const {modal}=this.state
         /* const {data}=this.data */
-        const data = {
+        /* const data = {
             usuario: '',
             psw:''
-        }
+        } */
         return(
             <SafeAreaView style={styles.container}>
                 <View>
@@ -42,11 +48,13 @@ class Login extends Component{
                 <View style={styles.form}>
                     <TextInput 
                         placeholder='Ingrese usuario'
-                        value={data.usuario}
+                        value={this.data.usuario}
                     />
                     <TextInput 
+                        /* secureTextEntry={true} */
                         placeholder='Ingrese contraseña'
-                        value={data.psw}
+                        value={this.data.psw}
+                        
                     />
                     <Button title='Ingresar' style={styles.button}/>
                     <View>

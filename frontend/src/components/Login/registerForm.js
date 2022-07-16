@@ -20,6 +20,7 @@ class RegisterForm extends Component{
                     style={styles.input}
                 />
                 <TextInput 
+                    secureTextEntry={true}
                     placeholder='Contraseña'
                     value={this.state.psw}
                     style={styles.input}

@@ -26,11 +26,11 @@ const App= () => {
 
   return (
     <SafeAreaView >
-      <Login />
-      {/* <TareasPersonales />
+      {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
+      <TareasPersonales />
       <TareasEquipo />
       <CrearTarea />
-      <Team /> */}
+      <Team />
     </SafeAreaView>
   );
 };
