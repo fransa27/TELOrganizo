@@ -21,14 +21,16 @@ import CrearTarea from './src/components/CrearTareas';
 import TareasEquipo from './src/components/Team/tareasEquipo';
 import TareasPersonales from './src/components/tareasPersonales';
 import Team from './src/components/Team/team';
+import Login from './src/components/Login/login';
 const App= () => {
 
   return (
     <SafeAreaView >
-      <TareasPersonales />
+      <Login />
+      {/* <TareasPersonales />
       <TareasEquipo />
       <CrearTarea />
-      <Team />
+      <Team /> */}
     </SafeAreaView>
   );
 };
