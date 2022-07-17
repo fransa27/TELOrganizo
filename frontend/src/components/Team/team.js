@@ -52,6 +52,10 @@ const styles = StyleSheet.create({
         /* flex: 1,
         alignItems: "center",
         justifyContent: "center", */
+    },
+    title:{
+        fontSize: 35,
+        fontWeight: "bold"
     }
 })
 export default Team

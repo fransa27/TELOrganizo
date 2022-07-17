@@ -29,8 +29,10 @@ const App= () => {
       {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
       <TareasPersonales />
       <TareasEquipo />
-      <CrearTarea />
+      
       <Team />
+      
+      <CrearTarea />
     </SafeAreaView>
   );
 };
