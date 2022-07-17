@@ -23,7 +23,13 @@ import TareasPersonales from './src/components/tareasPersonales';
 const App= () => {
 
   return (
+    
     <SafeAreaView >
+      <View style={styles.banner}>
+        <StatusBar style="auto"></StatusBar>
+        
+        <Text style={styles.titulo}> TELOrganizo </Text>
+      </View>
       <TareasPersonales />
       <TareasEquipo />
       <CrearTarea />
@@ -47,6 +53,12 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  banner: {
+    marginTop: 1,
+    padding: 10,
+    backgroundColor: '#e8eaf6',
+    fontSize: 24,
   },
 });
 

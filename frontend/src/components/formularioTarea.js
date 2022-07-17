@@ -15,29 +15,31 @@ class FormularioTarea extends Component{
 
         return(
             <View >
-                <TextInput 
-                    placeholder='Nombre Tarea'
-                    value={this.state.nombre}
-                    style={styles.input}
-                /> 
-                <Picker
-                    /* selectedValue={selectedValue} */
-                    style={{ height: 50, width: 150 }}
-                    /* onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} */
-                >
-                    <Picker.Item label="Usuario 1" /* value="usuario1" */ />
-                    <Picker.Item label="Usuario 2" /* value="usuario2" */ />
-                </Picker>
-                {/* <TextInput 
-                    style={styles.input}
-                    placeholder='Asignar Tarea'
-                    value={this.state.encargado}
-                /> */}
+                <View style={styles.box1}>
+                    <TextInput 
+                        placeholder='Nombre Tarea'
+                        value={this.state.nombre}
+                        style={styles.input}
+                    /> 
+                    <Picker
+                        /* selectedValue={selectedValue} */
+                        style={{ height: 50, width: 150 }}
+                        /* onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} */
+                    >
+                        <Picker.Item label="Usuario 1" /* value="usuario1" */ />
+                        <Picker.Item label="Usuario 2" /* value="usuario2" */ />
+                    </Picker>
+                    {/* <TextInput 
+                        style={styles.input}
+                        placeholder='Asignar Tarea'
+                        value={this.state.encargado}
+                    /> */}
 
-                {/* <TouchableHighlight> 
-                    <Text>Crear y asignar tarea</Text>
-                </TouchableHighlight> */}
-                <Button title='Crear y asignar tarea' />
+                    {/* <TouchableHighlight> 
+                        <Text>Crear y asignar tarea</Text>
+                    </TouchableHighlight> */}
+                    <Button title='Crear y asignar tarea' />
+                </View>
             </View>
 
         );
@@ -55,6 +57,14 @@ const styles = StyleSheet.create({
         /* backgroundColor: '#F9E79F', */
         borderColor: '#AEB6BF',
         height: 40,
+    },
+    box1: {
+        marginHorizontal: 10,
+        marginTop: 50,
+        padding: 30,
+        backgroundColor: 'pink',
+        fontSize: 24,
+        borderRadius: 10,
     },
     
 })

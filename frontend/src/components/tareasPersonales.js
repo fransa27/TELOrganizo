@@ -5,17 +5,18 @@ const TareasPersonales= () => {
     const [isSelect, setSelect] = useState(false);
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Tareas asignada</Text>
-            <View style={styles.checkboxContainer}>
-                <CheckBox 
-                    disabled={false}
-                    value={isSelect}
-                    onValueChange={(newValue) => setSelect(newValue)}
-                    style={styles.checkbox}
-                />
-                <Text>Tareas personales en checkbox</Text>
+            <View style={styles.box1}>
+                <Text style={styles.title}>Tareas asignada</Text>
+                <View style={styles.checkboxContainer}>
+                    <CheckBox 
+                        disabled={false}
+                        value={isSelect}
+                        onValueChange={(newValue) => setSelect(newValue)}
+                        style={styles.checkbox}
+                    />
+                    <Text>Tareas personales en checkbox</Text>
+                </View>
             </View>
-            
         </View>
     )
     

@@ -5,8 +5,10 @@ class TareasEquipo extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text style={styles.title}>Tareas equipo</Text>
-                <Text>Tareas grupo </Text>
+                <View style={styles.box1}>
+                    <Text style={styles.title}>Tareas equipo</Text>
+                    <Text>Tareas grupo </Text>
+                </View>
             </View>
         )
     }

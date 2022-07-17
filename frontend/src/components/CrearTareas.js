@@ -71,9 +71,11 @@ const styles = StyleSheet.create({
     },
     button: {
         borderRadius: 20,
+        paddingTop: 30,
         padding: 10,
         elevation: 2
-    },buttonClose: {
+    },
+    buttonClose: {
         backgroundColor: "#F1948A",
     },
 })
