@@ -29,9 +29,9 @@ const getTask = async (req,res)=>{
 const getTaskUser = async (req,res)=>{
     
     try {
-        const {id_usuario_tarea,id_usuario}=req.params
+        const {id_tarea,id_usuario}=req.params
         const result = await pool.query(
-            'SELECT id_usuario,nombre,id_familia,rol FROM usuario usu , tarea ta WHERE usu.id_usuario = ta.id_usuario_tarea AND $1=$2',[id_usuario,id_usuario_tarea])
+            'SELECT * FROM usuario usu , tarea ta WHERE usu.id_usuario = ta.id_usuario_tarea AND ta.id_tarea=$1',[id_tarea])
         if (result.rows.length === 0)
             return res.status(404).json({ message: "Tarea no encontrada" });
         
