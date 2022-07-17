@@ -1,6 +1,7 @@
-import { Text, SafeAreaView, FlatList,StyleSheet } from "react-native";
+import { View,Text, SafeAreaView, FlatList,StyleSheet } from "react-native";
 import React , {useState, useEffect}  from 'react';
 import axios from 'axios';
+import TareasEquipo from "./tareasEquipo";
 const Team = () =>{
     //ver el equipo
 
@@ -11,42 +12,36 @@ const Team = () =>{
         setMiembro(data)
         console.log(data)
     } */
-    const [loaded, setDataLoaded]=useState(false)
-    const [miembros, setUsersData]=useState([])
-
-    useEffect(()=>{
-        const fetchData = async () =>{
-            if(!loaded){
-                const result = await axios.get('http://localhost:4000/usuario')
-                if(result.data){
-                    setDataLoaded(true)
-                    setUsersData(result.data)
-                    //console.log(result.data)
-                }
-            }
+    //render(){
+        const [tareas, setTareas] = useState([])
+        
+        const loadTeamTasks = async ()=>{
+            
+            const data = await fetch('http://10.0.2.2:4000/tareas')
+            const json_data = await data.json()
+            
+            setTareas(json_data)
+            
         }
-        fetchData()
+        
+        useEffect(() => {
+            
+          loadTeamTasks()
+          
+        
+          
+        }, [])
+        
 
-    })
 
-    /* useEffect(() => {
-        loadTeamMembers()
-    }, []) */
 
-    return(
-        <SafeAreaView style={styles.container}>
-            <FlatList
-                data={miembros? miembros : []} 
-                renderItem={
-                    ({item})=>{ 
-                        return(
-                            <Text>{item.nombre}</Text>
-                        )
-                    }
-                }
-            />
-        </SafeAreaView>
-    )
+        return(
+            <View style={styles.container}>
+                <Text style={styles.title}>Tareas equipo</Text>
+                
+                <TareasEquipo tasks={tareas}/>
+            </View>
+        )
     //hacer boton para añadir mienbro al equipo
 }
 

@@ -1,16 +1,19 @@
 import React , {Component}  from 'react';
-import { View,Text, StyleSheet} from 'react-native';
+import {  Text, FlatList, StyleSheet  } from 'react-native'
 
-class TareasEquipo extends Component{
-    render(){
-        return(
-            <View style={styles.container}>
-                <Text style={styles.title}>Tareas equipo</Text>
-                <Text>Tareas grupo </Text>
-            </View>
-        )
-    }
+
+const TareasEquipo = ({tasks}) => {
+  return (
+    <FlatList
+        data={tasks}
+        renderItem={({item})=>{
+            return <Text>{item.nombre_tarea}</Text>
+        }}
+    />
+  )
 }
+
+
 
 const styles = StyleSheet.create({ 
     container:{
