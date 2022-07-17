@@ -14,6 +14,7 @@ const Team = () =>{
     } */
     //render(){
         const [tareas, setTareas] = useState([])
+        //const [usuario]
         
         const loadTeamTasks = async ()=>{
             

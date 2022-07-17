@@ -26,6 +26,21 @@ const getTask = async (req,res)=>{
     
 }
 
+const getAllTasksperUser = async (req,res)=>{
+    
+    try {
+        const {id_usuario}=req.params
+        const result = await pool.query('SELECT * FROM tarea WHERE id_usuario_tarea =$1',[id_usuario])
+        if (result.rows.length === 0)
+            return res.status(404).json({ message: "Tarea no encontrada" });
+        
+        return res.json(result.rows)
+    } catch (error) {
+        console.log(error.message)
+    }
+    
+}
+
 const getTaskUser = async (req,res)=>{
     
     try {
@@ -83,4 +98,4 @@ const updateTask= async (req,res)=>{
         console.log(error.message)
     }
 }
-module.exports={getTaskUser ,getAllTasks, getTask,createTask,deleteTask,updateTask}
+module.exports={getAllTasksperUser,getTaskUser ,getAllTasks, getTask,createTask,deleteTask,updateTask}

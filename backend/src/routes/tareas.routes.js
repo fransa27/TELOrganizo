@@ -9,10 +9,12 @@ const {
     createTask, 
     deleteTask, 
     updateTask,
-    getTaskUser
+    getTaskUser,
+    getAllTasksperUser
 } = require('../controllers/tareas.controllers')    //controllers/tareas.controllers'
 
 rou.get('/tareas', getAllTasks)
+rou.get('/tareas/usuario/:id_usuario', getAllTasksperUser)
 rou.get('/tareas/:id', getTask)
 rou.get('/tareas/:id_tarea/usuario/:id_usuario', getTaskUser)
 rou.post('/tareas',createTask)
