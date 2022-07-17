@@ -38,10 +38,13 @@ class CrearTarea extends React.Component {
                     </View>
 
                 </Modal>
-                <Button style={styles.button}
+                <TouchableOpacity onPress={()=> this.setModal(true)} style={styles.button}>
+                    <Text>Crear Tarea</Text>
+                </TouchableOpacity>
+                {/* <Button style={styles.button}
                     title='Crear Tarea'
                     onPress={()=> this.setModal(true)}
-                />
+                /> */}
             </View>
         );
     }    
@@ -72,7 +75,8 @@ const styles = StyleSheet.create({
     button: {
         borderRadius: 20,
         padding: 10,
-        elevation: 2
+        elevation: 2,
+        backgroundColor: "#7FB3D5",
     },buttonClose: {
         backgroundColor: "#F1948A",
     },

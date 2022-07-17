@@ -15,26 +15,15 @@ const Team = () =>{
     //render(){
         const [tareas, setTareas] = useState([])
         //const [usuario]
-        
-        const loadTeamTasks = async ()=>{
-            
+        const loadTeamTasks = async ()=>{    
             const data = await fetch('http://10.0.2.2:4000/tareas')
-            const json_data = await data.json()
-            
-            setTareas(json_data)
-            
+            const json_data = await data.json()    
+            setTareas(json_data)    
         }
         
-        useEffect(() => {
-            
-          loadTeamTasks()
-          
-        
-          
+        useEffect(() => {            
+          loadTeamTasks()           
         }, [])
-        
-
-
 
         return(
             <View style={styles.container}>

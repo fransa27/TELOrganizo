@@ -1,47 +1,52 @@
 import { StyleSheet, View, Text, TextInput, TouchableHighlight, Button } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import React, {Component, useState} from 'react';
-
-class FormularioTarea extends Component{
+import { createTask } from '../calls/api';
+const FormularioTarea = () => {
     
-    constructor(){
-        super()
-        this.state={
-            nombre: '',
-            encargado: ''
-        }
+    const [task, setTask] = useState({
+        nombre_tarea:'',
+        id_usuario:''
+    })
+    const handleChange = (name, value) =>{
+        setTask({...task, [name]: value})
     }
-    render (){
 
-        return(
-            <View >
-                <TextInput 
-                    placeholder='Nombre Tarea'
-                    value={this.state.nombre}
-                    style={styles.input}
-                /> 
-                <Picker
-                    /* selectedValue={selectedValue} */
-                    style={{ height: 50, width: 150 }}
-                    /* onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} */
-                >
-                    <Picker.Item label="Usuario 1" /* value="usuario1" */ />
-                    <Picker.Item label="Usuario 2" /* value="usuario2" */ />
-                </Picker>
-                {/* <TextInput 
-                    style={styles.input}
-                    placeholder='Asignar Tarea'
-                    value={this.state.encargado}
-                /> */}
-
-                {/* <TouchableHighlight> 
-                    <Text>Crear y asignar tarea</Text>
-                </TouchableHighlight> */}
-                <Button title='Crear y asignar tarea' />
-            </View>
-
-        );
+    const handleSubmit = () =>{
+        createTask(task)
+        
     }
+
+    return(
+        <View >
+            <TextInput 
+                placeholder='Nombre Tarea'
+                onEndEditing={text=> handleChange('nombre_tarea',text)}
+                style={styles.input}
+            /> 
+            <Picker
+                /* selectedValue={selectedValue} */
+                style={{ height: 50, width: 150 }}
+                /* onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)} */
+            >
+                <Picker.Item label="Usuario 1" /* value="usuario1" */ />
+                <Picker.Item label="Usuario 2" /* value="usuario2" */ />
+            </Picker>
+            <TextInput 
+                style={styles.input}
+                placeholder='Asignar Tarea'
+                onEndEditing={text=> handleChange('id_usuario',text)}
+
+            />
+
+            <TouchableHighlight onPress={handleSubmit()}> 
+                <Text>Crear y asignar tarea</Text>
+            </TouchableHighlight>
+            {/* <Button title='Crear y asignar tarea' onPress={handleSubmit()}/> */}
+        </View>
+
+    );
+
 
 }
 
@@ -53,8 +58,11 @@ const styles = StyleSheet.create({
     },
     input:{
         /* backgroundColor: '#F9E79F', */
-        borderColor: '#AEB6BF',
+        width: 200,
+        borderWidth:1,
+        borderColor: '#2E4053',
         height: 40,
+        padding:4        
     },
     
 })
