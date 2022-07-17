@@ -20,20 +20,26 @@ import {
 import CrearTarea from './src/components/CrearTareas';
 import TareasEquipo from './src/components/Team/tareasEquipo';
 import TareasPersonales from './src/components/tareasPersonales';
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
 import Team from './src/components/Team/team';
 import Login from './src/components/Login/login';
+//const Stack = createStackNavigator()
+
 const App= () => {
 
   return (
+    
     <SafeAreaView >
-      {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
-      <TareasPersonales />
-      <TareasEquipo />
-      
-      <Team />
-      
-      <CrearTarea />
-    </SafeAreaView>
+    {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
+    <TareasPersonales />
+    <TareasEquipo />
+    
+    <Team />
+    
+    <CrearTarea />
+  </SafeAreaView>
+    
   );
 };
 
