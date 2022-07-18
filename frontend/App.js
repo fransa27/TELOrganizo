@@ -24,6 +24,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import Team from './src/components/Team/team';
 import Login from './src/components/Login/login';
+
 //const Stack = createStackNavigator()
 
 const App= () => {

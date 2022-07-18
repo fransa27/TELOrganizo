@@ -40,7 +40,7 @@ class Login extends Component{
                     <Text style={styles.title}>
                         Bienvenido!
                     </Text>
-                    <Text>
+                    <Text style={styles.titleSection}>
                         Ingresa aquí
                     </Text>
                 </View>
@@ -120,7 +120,11 @@ const styles = StyleSheet.create({
     },
     registrer:{
 
-    }
+    },
+    titleSection:{
+        fontSize: 20,
+        fontWeight: "bold"
+    },
 })
 
 export default Login
