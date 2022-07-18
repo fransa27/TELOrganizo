@@ -6,8 +6,19 @@ import { StyleSheet,
     Button, 
     SafeAreaView,
     Modal } from 'react-native';
-import React, {Component} from 'react';
+import {Component} from 'react';
+import * as React from 'react';
 import RegisterForm from './registerForm';
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+
+/* import CrearTarea from '../CrearTareas';
+import TareasEquipo from '../Team/tareasEquipo';
+import TareasPersonales from '../tareasPersonales';
+import Team from '../Team/team'; */
+import Menu from '../menu'
+
+const Stack = createStackNavigator()
 class Login extends Component{
     constructor(){
         super()
@@ -21,8 +32,14 @@ class Login extends Component{
         psw:''
     } */
     state = {
-        modal: false
+        modal: false,
+        visible: false
+        
     }
+
+    phasenModalHandler = () => {
+        this.setState(({ visible }) => ({ visible: !visible }));
+    };
 
     setModal = (visible) => {
         this.setState({ modal: visible });
@@ -36,56 +53,66 @@ class Login extends Component{
         } */
         return(
             <SafeAreaView style={styles.container}>
-                <View>
-                    <Text style={styles.title}>
-                        Bienvenido!
-                    </Text>
-                    <Text>
-                        Ingresa aquí
-                    </Text>
-                </View>
-    
-                <View style={styles.form}>
-                    <TextInput 
-                        placeholder='Ingrese usuario'
-                        value={this.data.usuario}
-                    />
-                    <TextInput 
-                        /* secureTextEntry={true} */
-                        placeholder='Ingrese contraseña'
-                        value={this.data.psw}
-                        
-                    />
-                    <Button title='Ingresar' style={styles.button}/>
+                
+                
                     <View>
-                        <TouchableOpacity onPress={()=>this.setModal(true)}>
-                            <Text>
-                                ¿No tienes cuenta? Registrate!
-                            </Text> 
-                        </TouchableOpacity>
+                        <Text style={styles.title}>
+                            Bienvenido!
+                        </Text>
+                        <Text style={styles.titleSection}>
+                            Ingresa aquí
+                        </Text>
                     </View>
-                    
-                    
-                </View>
-                <Modal
-                    transparent={true}
-                    visible={modal}
-                    onRequestClose={() => {
-                        this.setModal(!modal);
-                    }}
-                >
-                    <View style={styles.modalView}>
-                        <RegisterForm />                        
-                        <TouchableOpacity
-                        style={[styles.button, styles.buttonClose]}
-                        onPress={() => this.setModal(!modal)}
-                        >
-                        <Text>Cerrar</Text>
-                        </TouchableOpacity>
-                        <Button title='Enviar'/>
-                    </View>
+        
+                    <View style={styles.form}>
+                        <TextInput 
+                            placeholder='Ingrese usuario'
+                            value={this.data.usuario}
+                        />
+                        <TextInput 
+                            /* secureTextEntry={true} */
+                            placeholder='Ingrese contraseña'
+                            value={this.data.psw}
+                            
+                        />
 
-                </Modal>
+                        <Button title="Ingresar" buttonStyle={styles.button} onPress={this.phasenModalHandler}/>
+                        {this.state.visible && <Menu/>}
+                        <View>
+                            <TouchableOpacity onPress={()=>this.setModal(true)}>
+                                <Text>
+                                    ¿No tienes cuenta? Registrate!
+                                </Text> 
+                            </TouchableOpacity>
+                        </View>
+
+
+
+                        
+                        
+                        
+                        
+                    </View>
+                    <Modal
+                        transparent={true}
+                        visible={modal}
+                        onRequestClose={() => {
+                            this.setModal(!modal);
+                        }}
+                    >
+                        <View style={styles.modalView}>
+                            <RegisterForm />                        
+                            <TouchableOpacity
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => this.setModal(!modal)}
+                            >
+                            <Text>Cerrar</Text>
+                            </TouchableOpacity>
+                            <Button title='Enviar'/>
+                        </View>
+
+                    </Modal>
+                
                 
             </SafeAreaView>
         )
@@ -120,7 +147,12 @@ const styles = StyleSheet.create({
     },
     registrer:{
 
+    },
+    titleSection:{
+        fontSize: 20,
+        fontWeight: "bold"
     }
+    
 })
 
 export default Login
