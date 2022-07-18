@@ -17,7 +17,7 @@ class CrearTarea extends React.Component {
     render() {
         const {modal}=this.state;
         return(
-            <View>
+            <View style={styles.box1}>
                 <Modal
                     transparent={true}
                     visible={modal}
@@ -79,6 +79,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#7FB3D5",
     },buttonClose: {
         backgroundColor: "#F1948A",
+    },
+    box1: {
+        marginHorizontal: 10,
+        padding: 10,
+        /* backgroundColor: 'pink', */
+        fontSize: 24,
+        borderRadius: 10,
     },
 })
 

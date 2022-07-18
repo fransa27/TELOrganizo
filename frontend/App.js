@@ -29,19 +29,19 @@ import Login from './src/components/Login/login';
 const App= () => {
 
   return (
-    <SafeAreaView >
-      <View style={styles.sectionContainer}>
+    <View style={styles.sectionContainer} >
+      <View /* style={styles.sectionContainer} */>
         <View style={styles.banner}>
           <StatusBar style="auto"></StatusBar>
           
-          <Text style={styles.titulo}> TELOrganizo </Text>
+          <Text style={styles.sectionTitle}> TELOrganizo </Text>
         </View>
         <TareasPersonales />
         <TareasEquipo />
         <CrearTarea />
         {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
       </View>
-    </SafeAreaView>
+    </View>
     
   );
 };
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     paddingLeft: 1,
     paddingRight: 1,
     paddingEnd: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#F2D7D5',
     marginBottom: 50,
   },
   sectionTitle: {

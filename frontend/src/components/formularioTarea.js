@@ -18,7 +18,8 @@ const FormularioTarea = () => {
     }
 
     return(
-        <View >
+        <View style={styles.box1}>
+            <Text style={styles.sectionTitle} >Crea una tarea</Text>
             <TextInput 
                 placeholder='Nombre Tarea'
                 onEndEditing={text=> handleChange('nombre_tarea',text)}
@@ -64,7 +65,17 @@ const styles = StyleSheet.create({
         height: 40,
         padding:4        
     },
-    
+    box1: {
+        marginHorizontal: 10,
+        padding: 10,
+        /* backgroundColor: 'pink', */
+        fontSize: 24,
+        borderRadius: 10,
+    },
+    sectionTitle: {
+        fontSize: 24,
+        fontWeight: '600',
+    },
 })
 
 export default FormularioTarea;
