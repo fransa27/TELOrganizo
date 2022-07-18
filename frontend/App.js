@@ -29,16 +29,19 @@ import Login from './src/components/Login/login';
 const App= () => {
 
   return (
-    
     <SafeAreaView >
-    {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
-    <TareasPersonales />
-    <TareasEquipo />
-    
-    <Team />
-    
-    <CrearTarea />
-  </SafeAreaView>
+      <View style={styles.sectionContainer}>
+        <View style={styles.banner}>
+          <StatusBar style="auto"></StatusBar>
+          
+          <Text style={styles.titulo}> TELOrganizo </Text>
+        </View>
+        <TareasPersonales />
+        <TareasEquipo />
+        <CrearTarea />
+        {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
+      </View>
+    </SafeAreaView>
     
   );
 };
