@@ -22,7 +22,15 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 20,
         fontWeight: "bold"
-    }
+    },
+    box1: {
+        marginHorizontal: 10,
+        marginTop: 50,
+        padding: 30,
+        backgroundColor: 'pink',
+        fontSize: 24,
+        borderRadius: 10,
+      },
 })
 
 export default TareasEquipo;
