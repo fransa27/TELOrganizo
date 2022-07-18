@@ -46,10 +46,14 @@ const App= () => {
   );
 };
 
+
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    paddingLeft: 1,
+    paddingRight: 1,
+    paddingEnd: 1,
+    backgroundColor: 'white',
+    marginBottom: 50,
   },
   sectionTitle: {
     fontSize: 24,
@@ -62,6 +66,12 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  banner: {
+    marginTop: 1,
+    padding: 10,
+    backgroundColor: '#e8eaf6',
+    fontSize: 24,
   },
 });
 
