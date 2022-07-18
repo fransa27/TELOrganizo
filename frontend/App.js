@@ -25,22 +25,27 @@ const App= () => {
   return (
     
     <SafeAreaView >
-      <View style={styles.banner}>
-        <StatusBar style="auto"></StatusBar>
-        
-        <Text style={styles.titulo}> TELOrganizo </Text>
+      <View style={styles.sectionContainer}>
+        <View style={styles.banner}>
+          <StatusBar style="auto"></StatusBar>
+          
+          <Text style={styles.titulo}> TELOrganizo </Text>
+        </View>
+        <TareasPersonales />
+        <TareasEquipo />
+        <CrearTarea />
       </View>
-      <TareasPersonales />
-      <TareasEquipo />
-      <CrearTarea />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    paddingLeft: 1,
+    paddingRight: 1,
+    paddingEnd: 1,
+    backgroundColor: 'white',
+    marginBottom: 50,
   },
   sectionTitle: {
     fontSize: 24,

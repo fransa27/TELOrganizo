@@ -33,7 +33,7 @@ class CrearTarea extends React.Component {
                         style={[styles.button, styles.buttonClose]}
                         onPress={() => this.setModal(!modal)}
                         >
-                        <Text>Cerrar</Text>
+                        <Text> Cerrar </Text>
                         </TouchableOpacity>
                     </View>
 
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingTop: 30,
         padding: 10,
-        elevation: 2
+        elevation: 2,
     },
     buttonClose: {
         backgroundColor: "#F1948A",
