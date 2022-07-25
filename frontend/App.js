@@ -6,49 +6,54 @@
  * @flow strict-local
  */
 
-//import React from 'react';
-import * as React from 'react';
+import React from 'react';
 
 import {
   Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
-  TouchableOpacity, 
   StyleSheet,
   Text,
   View
 } from 'react-native';
-
+import CrearTarea from './src/components/CrearTareas';
+import TareasEquipo from './src/components/Team/tareasEquipo';
+import TareasPersonales from './src/components/tareasPersonales';
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
-
+import Team from './src/components/Team/team';
 import Login from './src/components/Login/login';
-const Stack = createStackNavigator()
-
+//const Stack = createStackNavigator()
 
 const App= () => {
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}  
+    <View style={styles.sectionContainer} >
+      <View /* style={styles.sectionContainer} */>
+        <View style={styles.banner}>
+          <StatusBar style="auto"></StatusBar>
           
-          />
-      </Stack.Navigator>
-        
-
-      
-    </NavigationContainer>
+          <Text style={styles.sectionTitle}> TELOrganizo </Text>
+        </View>
+        <TareasPersonales />
+        <TareasEquipo />
+        <CrearTarea />
+        {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
+      </View>
+    </View>
+    
   );
 };
 
+
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    paddingLeft: 1,
+    paddingRight: 1,
+    paddingEnd: 1,
+    backgroundColor: '#F2D7D5',
+    marginBottom: 50,
   },
   sectionTitle: {
     fontSize: 24,
@@ -61,6 +66,12 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  banner: {
+    marginTop: 1,
+    padding: 10,
+    backgroundColor: '#e8eaf6',
+    fontSize: 24,
   },
 });
 
