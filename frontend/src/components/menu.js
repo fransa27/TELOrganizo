@@ -37,7 +37,7 @@
             <Text style={styles.sectionTitle}> TELOrganizo </Text>
           </View>
           <TareasPersonales />
-          <TareasEquipo />
+          <Team />
           <CrearTarea />
           {/* <Login /> */}{/* descomentar para hacer el inicio de sesion */}
         </View>

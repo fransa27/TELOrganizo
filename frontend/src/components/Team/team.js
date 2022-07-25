@@ -27,7 +27,7 @@ const Team = () =>{
 
         return(
             <View style={styles.container}>
-                <Text style={styles.title}>Tareas equipo</Text>
+                
                 
                 <TareasEquipo tasks={tareas}/>
             </View>
@@ -37,7 +37,7 @@ const Team = () =>{
 
 const styles = StyleSheet.create({ 
     container:{
-        backgroundColor: '#AF7AC5',
+        //backgroundColor: '#AF7AC5',
         /* flex: 1,
         alignItems: "center",
         justifyContent: "center", */
