@@ -26,13 +26,11 @@ const Team = () =>{
         }, [])
 
         return(
-            <View style={styles.container}>
-                <Text style={styles.title}>Tareas equipo</Text>
-                
+            <View style={styles.box1}>               
                 <TareasEquipo tasks={tareas}/>
             </View>
         )
-    //hacer boton para añadir mienbro al equipo
+    
 }
 
 const styles = StyleSheet.create({ 
@@ -45,6 +43,13 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 35,
         fontWeight: "bold"
+    },
+    box1: {
+        marginHorizontal: 10,
+        padding: 10,
+        /* backgroundColor: 'pink', */
+        fontSize: 24,
+        borderRadius: 10,
     }
 })
 export default Team

@@ -26,7 +26,7 @@ class CrearTarea extends React.Component {
                     }}
                 >
                     <View style={styles.modalView}>
-                        {/* <Text> Hola</Text> */}
+                        
                         <FormularioTarea />
 
                         <TouchableOpacity

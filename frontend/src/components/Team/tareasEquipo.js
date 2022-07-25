@@ -5,15 +5,16 @@ import {  Text, FlatList, StyleSheet, View  } from 'react-native'
 const TareasEquipo = ({tasks}) => {
   return (
     <View style={styles.container}>
-        {/* <FlatList
-        data={tasks}
-        renderItem={({item})=>{
-            return <Text>{item.nombre_tarea}</Text>
-        }}
-        /> */} 
+         
         <View style={styles.box1}>
             <Text style={styles.title}>Tareas Equipo</Text>
-            <Text>Tareas grupo</Text>
+            {/* <Text>Tareas grupo</Text> */}
+            <FlatList
+                data={tasks}
+                renderItem={({item})=>{
+                    return <Text>{item.nombre_tarea}</Text>
+                }}
+            />
         </View>
     </View>
 
